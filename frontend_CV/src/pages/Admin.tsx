@@ -58,7 +58,7 @@ const Admin = () => {
 
   // Projects API Calls
   const fetchProjects = async (): Promise<Project[]> => {
-    const response = await fetch("http://localhost:5000/api/projects");
+    const response = await fetch("https://cvbackend-production-f378.up.railway.app/api/projects");
     if (!response.ok) {
       throw new Error("Failed to fetch projects");
     }
@@ -68,7 +68,7 @@ const Admin = () => {
 
   const createProjectMutation = useMutation({
     mutationFn: async (newProjectData: Omit<Project, '_id' | 'createdAt' | 'updatedAt'>) => {
-      const response = await fetch("http://localhost:5000/api/projects", {
+      const response = await fetch("https://cvbackend-production-f378.up.railway.app/api/projects", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(newProjectData),
@@ -95,7 +95,7 @@ const Admin = () => {
 
   const updateProjectMutation = useMutation({
     mutationFn: async ({ id, updatedData }: { id: string; updatedData: Partial<Omit<Project, '_id' | 'createdAt' | 'updatedAt'>> }) => {
-      const response = await fetch(`http://localhost:5000/api/projects/${id}`, {
+      const response = await fetch(`https://cvbackend-production-f378.up.railway.app/api/projects/${id}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(updatedData),
@@ -120,7 +120,7 @@ const Admin = () => {
 
   const deleteProjectMutation = useMutation({
     mutationFn: async (projectId: string) => {
-      const response = await fetch(`http://localhost:5000/api/projects/${projectId}`, {
+      const response = await fetch(`https://cvbackend-production-f378.up.railway.app/api/projects/${projectId}`, {
         method: "DELETE",
       });
       if (!response.ok) {
@@ -140,7 +140,7 @@ const Admin = () => {
 
   // Blog Posts API Calls
   const fetchBlogPosts = async (): Promise<BlogPost[]> => {
-    const response = await fetch("http://localhost:5000/api/blog");
+    const response = await fetch("https://cvbackend-production-f378.up.railway.app/api/blog");
     if (!response.ok) {
       throw new Error("Failed to fetch blog posts");
     }
@@ -150,7 +150,7 @@ const Admin = () => {
 
   const createBlogPostMutation = useMutation({
     mutationFn: async (newPost: Omit<BlogPost, '_id' | 'createdAt' | 'updatedAt'>) => {
-      const response = await fetch("http://localhost:5000/api/blog", {
+      const response = await fetch("https://cvbackend-production-f378.up.railway.app/api/blog", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(newPost),
@@ -174,7 +174,7 @@ const Admin = () => {
 
   const updateBlogPostMutation = useMutation({
     mutationFn: async ({ id, updatedData }: { id: string; updatedData: Partial<Omit<BlogPost, '_id' | 'createdAt' | 'updatedAt'>> }) => {
-      const response = await fetch(`http://localhost:5000/api/blog/${id}`, {
+      const response = await fetch(`https://cvbackend-production-f378.up.railway.app/api/blog/${id}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(updatedData),
@@ -198,7 +198,7 @@ const Admin = () => {
 
   const deleteBlogPostMutation = useMutation({
     mutationFn: async (blogPostId: string) => {
-      const response = await fetch(`http://localhost:5000/api/blog/${blogPostId}`, {
+      const response = await fetch(`https://cvbackend-production-f378.up.railway.app/api/blog/${blogPostId}`, {
         method: "DELETE",
       });
       if (!response.ok) {

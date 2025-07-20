@@ -22,7 +22,7 @@ const Blog = () => {
 
   // Function to fetch blog posts from your backend
   const fetchBlogPosts = async (): Promise<BlogPost[]> => {
-    const response = await fetch("http://localhost:5000/api/blog"); // Your backend API endpoint
+    const response = await fetch("https://cvbackend-production-f378.up.railway.app/api/blog"); // Your backend API endpoint
     if (!response.ok) {
       const errorData = await response.json().catch(() => ({ message: "Unknown error" }));
       throw new Error(errorData.message || "Failed to fetch blog posts from server.");

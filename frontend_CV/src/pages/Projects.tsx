@@ -30,7 +30,7 @@ const Projects = () => {
     if (searchTerm) {
       queryParams.append("search", searchTerm);
     }
-    const url = `http://localhost:5000/api/projects?${queryParams.toString()}`;
+    const url = `https://cvbackend-production-f378.up.railway.app/api/projects?${queryParams.toString()}`;
 
     const response = await fetch(url);
     if (!response.ok) {

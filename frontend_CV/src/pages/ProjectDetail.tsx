@@ -24,7 +24,7 @@ const ProjectDetail = () => {
 
   // Function to fetch a single project by ID
   const fetchSingleProject = async (): Promise<ProjectDetailType> => {
-    const response = await fetch(`http://localhost:5000/api/projects/${id}`);
+    const response = await fetch(`https://cvbackend-production-f378.up.railway.app/api/projects/${id}`);
     if (!response.ok) {
       const errorData = await response.json().catch(() => ({ message: "Unknown error fetching project" }));
       throw new Error(errorData.message || "Failed to fetch project.");

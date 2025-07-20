@@ -21,7 +21,7 @@ const BlogPostDetail = () => {
   // Function to fetch a single blog post by its ID from the backend
   const fetchSingleBlogPost = async (): Promise<BlogPostDetailType> => {
     // Construct the API URL using the ID from useParams
-    const response = await fetch(`http://localhost:5000/api/blog/${id}`);
+    const response = await fetch(`https://cvbackend-production-f378.up.railway.app/api/blog/${id}`);
     
     // Check if the network response was successful
     if (!response.ok) {
