@@ -54,11 +54,12 @@ const Header = () => {
 
   // Dynamically build the navigation items based on the login status
   const dynamicNavItems = [...baseNavItems];
+
+  // Conditionally add Admin or Login based on isLoggedIn state
   if (isLoggedIn) {
-    // If logged in, show the "Admin" link
     dynamicNavItems.push({ name: "Admin", path: "/admin" });
   } else {
-    // If not logged in, show the "Login" link
+    // Only show Login if not logged in
     dynamicNavItems.push({ name: "Login", path: "/login" });
   }
 
@@ -73,7 +74,8 @@ const Header = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
-            {dynamicNavItems.map((item) => (
+            {/* Filter out "Login" if isLoggedIn is true for desktop navigation */}
+            {dynamicNavItems.filter(item => !(item.name === "Login" && isLoggedIn)).map((item) => (
               <NavLink
                 key={item.name}
                 to={item.path}
@@ -114,7 +116,8 @@ const Header = () => {
         {isMenuOpen && (
           <div className="md:hidden py-4 border-t border-border/50">
             <nav className="flex flex-col space-y-4">
-              {dynamicNavItems.map((item) => (
+              {/* Filter out "Login" if isLoggedIn is true for mobile navigation */}
+              {dynamicNavItems.filter(item => !(item.name === "Login" && isLoggedIn)).map((item) => (
                 <NavLink
                   key={item.name}
                   to={item.path}
