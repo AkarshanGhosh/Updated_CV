@@ -17,7 +17,7 @@ const LoginPage = () => {
   // Mutation for login API call
   const loginMutation = useMutation({
     mutationFn: async (credentials) => {
-      const response = await fetch("https://cvbackend-production-f378.up.railway.app/api/auth/login", {
+      const response = await fetch("https://cvbackend-rj6m.onrender.com/api/auth/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
