@@ -57,9 +57,6 @@ const Header = () => {
   if (isLoggedIn) {
     // If logged in, show the "Admin" link
     dynamicNavItems.push({ name: "Admin", path: "/admin" });
-  } else {
-    // If not logged in, show the "Login" link
-    dynamicNavItems.push({ name: "Login", path: "/login" });
   }
 
   return (
